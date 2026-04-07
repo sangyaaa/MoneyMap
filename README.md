@@ -80,8 +80,7 @@
 | **Backend** | PHP 8.x |
 | **Database** | MySQL 8.0 |
 | **Charts** | Chart.js |
-| **Icons** | FontAwesome 6 |
-| **Server** | XAMPP / Apache / WAMP |
+| **Server** | XAMPP / Apache  |
 | **Styling** | Custom CSS with CSS Variables |
 
 ---
