@@ -80,93 +80,90 @@
 | **Backend** | PHP 8.x |
 | **Database** | MySQL 8.0 |
 | **Charts** | Chart.js |
-| **Server** | XAMPP / Apache |
+| **Icons** | FontAwesome 6 |
+| **Server** | XAMPP / Apache / WAMP |
 | **Styling** | Custom CSS with CSS Variables |
 
 ---
 
 ## 📁 Project Structure
-MONEYMAP/
-│
-├── index.php
-├── login.php
-├── logout.php
-├── config.php
-├── functions.php
-├── script.js
-├── style.css
-├── get_calendar_data.php
-│
-├── ajax/
-│ ├── get_summary.php
-│ ├── get_transactions.php
-│ ├── process_account.php
-│ ├── process_budget.php
-│ └── process_transaction.php
 
+| Folder / File | Description |
+| :--- | :--- |
+| **`root/`** | Core application files |
+| ├── `index.php` | Main dashboard and landing page |
+| ├── `login.php` | User authentication and login logic |
+| ├── `logout.php` | Handles session termination |
+| ├── `config.php` | Database connection settings |
+| ├── `functions.php` | Global PHP helper functions and business logic |
+| ├── `script.js` | Main JavaScript for UI interactions and AJAX |
+| ├── `style.css` | Global styles, CSS variables, and Dark Mode themes |
+| ├── `get_calendar_data.php` | Endpoint for fetching transaction dates for the calendar |
+| **`ajax/`** | Asynchronous PHP scripts for real-time updates |
+| ├── `get_summary.php` | Fetches card balances and budget totals |
+| ├── `get_transactions.php` | Retrieves filtered transaction lists |
+| ├── `process_account.php` | Handles account creation and updates |
+| ├── `process_budget.php` | Manages monthly budget settings |
+| └── `process_transaction.php`| Logic for adding, editing, or deleting entries |
+| **`assets/`** | Static frontend resources |
+| ├── `css/` | External libraries (Bootstrap, etc.) |
+| ├── `js/` | External plugins (Chart.js, jQuery) |
+| └── `images/` | Application logos and icons |
+| **`sql/`** | Database schema management |
+| └── `install.sql` | SQL script to initialize database and tables |
+    └── 📄 install.sql           # Database schema and seed data
 
-## 🚀 How to Run Locally 
+---
+
+## 🚀 How to Run Locally
 
 ### Prerequisites
-- XAMPP (or any PHP/MySQL server) installed
-- Web browser 
+* **XAMPP / WAMP / MAMP** installed
+* **PHP 8.x** or higher
+* **MySQL 8.0**
 
 ### Step-by-Step Setup
 
-```bash
-# 1. Download or clone the repository
-git clone https://github.com/yourusername/moneymap.git
-# OR simply copy files to htdocs
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/yourusername/moneymap.git](https://github.com/yourusername/moneymap.git)
+    ```
 
-# 2. Move to XAMPP htdocs folder
-# For Windows:
-move moneymap C:\xampp\htdocs\
+2.  **Move to Web Directory**
+    Move the `moneymap` folder to your `htdocs` (XAMPP) or `www` (WAMP) directory.
 
-# For Mac/Linux:
-mv moneymap /opt/lampp/htdocs/
+3.  **Database Configuration**
+    * Open **phpMyAdmin** (`http://localhost/phpmyadmin`).
+    * Create a new database named `money_tracker`.
+    * Go to the **Import** tab and upload the `sql/install.sql` file.
 
-# 3. Start XAMPP
-# - Open XAMPP Control Panel
-# - Click "Start" for Apache and MySQL services
+4.  **Update Connection Strings**
+    Edit `config.php` to match your local environment:
+    ```php
+    <?php
+    $host = 'localhost';
+    $user = 'root';
+    $password = ''; // Default XAMPP password is empty
+    $database = 'money_tracker';
+    ?>
+    ```
 
-# 4. Create the database
-# - Open browser and go to: http://localhost/phpmyadmin
-# - Click on "New" to create a database
-# - Name it: money_tracker
-# - Select "utf8_general_ci" as collation
-# - Click "Create"
-
-# 5. Import the database tables
-# - Click on the "money_tracker" database
-# - Click on the "SQL" tab
-# - Copy and paste the SQL code provided in the project
-# - Click "Go" to execute
-
-# 6. Configure database connection (if needed)
-# - Open config.php in your editor
-# - Verify database credentials:
-#   $host = 'localhost';
-#   $user = 'root';
-#   $password = '';
-#   $database = 'money_tracker';
-
-# 7. Access the application
-# - Open browser and go to: http://localhost/moneymap
-# - Login with credentials
-
-# 8. Start tracking your finances!
-# - Add your accounts (Bank, eSewa, Cash, etc.)
-# - Add income and expense transactions
-# - Set your monthly budget
-# - Explore charts and calendar view
+5.  **Run the App**
+    Navigate to `http://localhost/moneymap` in your browser.
 
 ---
 
 ## 🔧 Future Improvements
-# - Export to CSV/PDF
-# - Recurring transactions
-# - Email notifications
-# - Multi-currency support
-# - Mobile app (React Native / Flutter)
-# - REST API integration
-# - Two-factor authentication
+
+| Priority | Feature | Description |
+| :--- | :--- | :--- |
+| 🔴 High | **Export to CSV/PDF** | Generate downloadable financial reports |
+| 🔴 High | **Recurring Transactions** | Automate monthly bills and salary entries |
+| 🟡 Medium | **Email Notifications** | Budget alerts and weekly summaries |
+| 🟡 Medium | **Multi-currency** | Support for global currency exchange rates |
+| 🟢 Low | **Receipt Uploads** | Attach images to specific transactions |
+
+---
+
+## 📄 License
+This project is open-source and available under the **MIT License**.
