@@ -104,20 +104,13 @@
 | ├── `process_account.php` | Handles account creation and updates |
 | ├── `process_budget.php` | Manages monthly budget settings |
 | └── `process_transaction.php`| Logic for adding, editing, or deleting entries |
-| **`assets/`** | Static frontend resources |
-| ├── `css/` | External libraries (Bootstrap, etc.) |
-| ├── `js/` | External plugins (Chart.js, jQuery) |
-| └── `images/` | Application logos and icons |
-| **`sql/`** | Database schema management |
-| └── `install.sql` | SQL script to initialize database and tables |
-    └── 📄 install.sql           # Database schema and seed data
 
 ---
 
 ## 🚀 How to Run Locally
 
 ### Prerequisites
-* **XAMPP / WAMP / MAMP** installed
+* **XAMPP** installed
 * **PHP 8.x** or higher
 * **MySQL 8.0**
 
@@ -125,11 +118,11 @@
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/yourusername/moneymap.git](https://github.com/yourusername/moneymap.git)
+    git clone [https://github.com/yourusername/moneymap.git](https://github.com/sangyaaa/moneymap.git)
     ```
 
 2.  **Move to Web Directory**
-    Move the `moneymap` folder to your `htdocs` (XAMPP) or `www` (WAMP) directory.
+    Move the `moneymap` folder to your `htdocs` (XAMPP) directory.
 
 3.  **Database Configuration**
     * Open **phpMyAdmin** (`http://localhost/phpmyadmin`).
